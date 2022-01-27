@@ -9,18 +9,16 @@ function save(picture) {
 function main() {
         const picture = canvas.createCanvas(400, 400);
         const context = picture.getContext('2d');
-        const gradient = context.createLinearGradient(30,100, 230, 175);
+        const gradient = context.createLinearGradient(100,0, 300,0);
         
+
         gradient.addColorStop(0, 'green');
         gradient.addColorStop(.5, 'yellow');
         gradient.addColorStop(1, 'green');
-        context.strokeStyle = gradient;
-        context.strokeRect(30, 100, 200, 75);
-        context.font = '30px Impact'
-        context.rotate(0)
-        context.fillStyle = 'Blue'
-        context.fillText('Bonjour!', 80, 150)
-
+        context.rotate(45 * Math.PI / 180);
+        context.translate(200, 200);
+        context.fillStyle = gradient;
+        context.fillRect(-25, -300, 200, 200);
         save(picture);
 }
 
